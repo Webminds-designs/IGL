@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import heroImage from "../assets/gradhat22.png";
 import servise from "../assets/servise.png";
 import personImage from "../assets/person.jpg";
+import personImage2 from "../assets/person2.jpg";
 import missionImage from "../assets/missionn.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -127,19 +128,19 @@ const AboutUs = () => {
             </p>
             <div className="flex justify-between md:items-end gap-4 md:gap-5 mt-4 md:mt-0">
               <div>
-                <p className="text-sm md:text-[16px] font-bold text-black">
+                <p className="text-sm md:text-[16px] font-medium text-black">
                   10+
                 </p>
                 <p className="text-[#787878] text-sm">Countries</p>
               </div>
               <div>
-                <p className="text-sm md:text-[16px] font-bold text-black">
+                <p className="text-sm md:text-[16px] font-medium text-black">
                   15+
                 </p>
                 <p className="text-[#787878] text-sm">Universities</p>
               </div>
               <div>
-                <p className="text-sm md:text-[16px] font-bold text-black">
+                <p className="text-sm md:text-[16px] font-medium text-black">
                   100+
                 </p>
                 <p className="text-[#787878] text-sm">Students Helped</p>
@@ -194,7 +195,7 @@ const AboutUs = () => {
               <img
                 src={servise}
                 alt="Counseling Session"
-                className="rounded-xl w-full h-[300px] md:h-[400px] lg:h-[630px] object-cover"
+                className="rounded-xl w-full h-[300px] md:h-[470px] lg:h-[500px] object-cover"
               />
             </div>
 
@@ -234,7 +235,7 @@ const AboutUs = () => {
         <section className="w-full mx-auto px-4 md:px-8 lg:px-20 py-8 md:py-20 text-center">
           <div className="flex items-center pt-4 md:pt-10">
             <div className="w-12 md:w-20 border-t border-gray-500"></div>
-            <h3 className="text-gray-500 text-sm md:text-[16px] uppercase tracking-wide ml-2 md:ml-3">
+            <h3 className="text-gray-500 text-sm md:text-[16px] uppercase tracking-wide ml-2 my-5 md:ml-3">
               MEET OUR TEAM
             </h3>
           </div>
@@ -258,7 +259,7 @@ const AboutUs = () => {
             </div>
             <div className="bg-white rounded-lg text-center w-full max-w-xs md:max-w-none">
               <img
-                src={personImage}
+                src={personImage2}
                 alt="Shahiq Cader"
                 className="w-48 h-60 md:w-64 md:h-80 mx-auto rounded-lg mb-4 md:mb-6 object-cover"
               />

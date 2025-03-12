@@ -54,7 +54,13 @@ const IndividualCountry = () => {
                     />
                   </div>
                   <h3 className="text-lg md:text-xl lg:text-2xl font-normal text-center">
-                    {['Miami Regional University', 'Davis University', 'EduGlobal College'][index]}
+                    {
+                      [
+                        "Miami Regional University",
+                        "Davis University",
+                        "EduGlobal College",
+                      ][index]
+                    }
                   </h3>
                 </div>
               ))}
@@ -72,11 +78,11 @@ const IndividualCountry = () => {
               </h3>
             </div>
             <p className="text-lg md:text-xl lg:text-2xl text-gray-800 mb-12 md:mb-12">
-              The USA Is A Top Destination For Students Worldwide, Offering A{' '}
+              The USA Is A Top Destination For Students Worldwide, Offering A{" "}
               <span className="text-[#787878]">
                 World-Class Education System, Globally Recognized Degrees, And
                 Diverse Career Opportunities. With Cutting-Edge Research, Strong
-                Industry Connections{' '}
+                Industry Connections{" "}
               </span>
               And A Focus On Innovation, U.S. Universities Provide Students With
               Real-World Experience. A Multicultural Environment And Flexible
@@ -110,16 +116,24 @@ const IndividualCountry = () => {
                     />
                   </div>
                   <h3 className="text-lg md:text-xl lg:text-2xl font-normal text-center">
-                    {['WOXEN University', 'NEOMA Business School', 'Amsterdam Campus'][index]}
+                    {
+                      [
+                        "WOXEN University",
+                        "NEOMA Business School",
+                        "Amsterdam Campus",
+                      ][index]
+                    }
                   </h3>
                 </div>
               ))}
             </div>
-            
+
             {/* Centered Explore More Button */}
             <div className="w-full flex justify-center mt-8 md:mt-8">
-              <button className="text-black py-2 px-8 md:py-3 md:px-12 border-2 border-black rounded-3xl 
-                hover:bg-black hover:text-white transition-all duration-300 text-lg md:text-xl mb-8">
+              <button
+                className="text-black py-2 px-8 md:py-3 md:px-12 border-2 border-black rounded-3xl 
+                hover:bg-black hover:text-white transition-all duration-300 text-lg md:text-xl mb-8"
+              >
                 Explore More Universities
               </button>
             </div>
