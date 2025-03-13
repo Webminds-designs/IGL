@@ -6,6 +6,7 @@ import Countries from "./pages/Countries";
 import Universities from "./pages/Universities";
 import ContactUs from "./pages/ContactUs";
 import IndividualCountry from "./pages/IndividualCountry";
+import IndividualUniversity from "./pages/IndividualUniversity";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/universities" element={<Universities />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/individualcountry" element={<IndividualCountry />} />
+        <Route path="/individualuniversity" element={<IndividualUniversity />} />
       </Routes>
     </Router>
   );

@@ -81,30 +81,30 @@ const AboutUs = () => {
       <Navbar />
       <div className="overflow-x-hidden">
         {/* Hero Section */}
-        <div className="relative w-full h-[300px] md:h-[500px] lg:h-[700px]">
+        <div className="relative w-full h-[40vh] min-h-[300px] md:h-[60vh] lg:h-[70vh]">
           <img
             src={heroImage}
             alt="Hero"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 flex items-end justify-start pb-4 md:pb-12 px-4 md:px-20">
-            <h1 className="text-3xl md:text-4xl lg:text-[64px] font-medium font-base text-white text-left">
+          <div className="absolute inset-0 flex items-end justify-start pb-6 md:pb-12 px-4 md:px-8 lg:px-16 xl:px-24 bg-gradient-to-t from-black/60">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[64px] font-medium text-white leading-tight md:leading-normal">
               Empowering Futures, Connecting
-              <br className="hidden lg:block" />
+              <br className="hidden md:block" />
               Students To Global Education
             </h1>
           </div>
         </div>
 
         {/* Who We Are Section */}
-        <div className="bg-white p-4 md:p-8 lg:px-24 mx-auto py-8 md:py-20">
-          <div className="flex items-center pt-4 md:pt-10">
-            <div className="w-12 md:w-20 border-t border-gray-500"></div>
-            <h3 className="text-gray-500 text-sm md:text-[16px] uppercase tracking-wide ml-2 md:ml-3">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16 lg:py-20">
+          <div className="flex items-center pt-4">
+            <div className="w-12 md:w-20 border-t border-gray-500" />
+            <h3 className="text-gray-500 text-sm md:text-base uppercase tracking-wide ml-2 md:ml-3">
               who are we
             </h3>
           </div>
-          <p className="text-lg md:text-2xl lg:text-3xl xl:text-4xl mt-4 md:mt-5 text-gray-800">
+          <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl mt-4 md:mt-6 text-gray-800">
             At Institute of Global Languages (IGL), We Specialize In{" "}
             <span className="text-[#787878]">
               Helping Sri Lankan Students Achieve Their Dream Of Studying
@@ -117,8 +117,8 @@ const AboutUs = () => {
             To Connect Students With Top International Institutions.
           </p>
 
-          <div className="flex flex-col md:flex-row justify-between mt-6 md:mt-8">
-            <p className="text-sm md:text-[16px] text-black md:max-w-xl">
+          <div className="flex flex-col md:flex-row justify-between gap-6 mt-6 md:mt-10">
+            <p className="text-base md:text-lg text-gray-800 md:max-w-2xl">
               With Years Of Experience In Student Recruitment And International
               Education Consulting, We Are Dedicated To Making Your Academic
               Journey{" "}
@@ -126,41 +126,49 @@ const AboutUs = () => {
                 Smooth, Successful, And Stress-Free.
               </span>
             </p>
-            <div className="flex justify-between md:items-end gap-4 md:gap-5 mt-4 md:mt-0">
-              <div>
-                <p className="text-sm md:text-[16px] font-medium text-black">
+            <div className="flex justify-between md:justify-start md:gap-8 lg:gap-12">
+              <div className="text-center">
+                <p className="text-xl md:text-2xl font-medium text-black">
                   10+
                 </p>
-                <p className="text-[#787878] text-sm">Countries</p>
+                <p className="text-[#787878] text-sm md:text-base">Countries</p>
               </div>
-              <div>
-                <p className="text-sm md:text-[16px] font-medium text-black">
+              <div className="text-center">
+                <p className="text-xl md:text-2xl font-medium text-black">
                   15+
                 </p>
-                <p className="text-[#787878] text-sm">Universities</p>
+                <p className="text-[#787878] text-sm md:text-base">
+                  Universities
+                </p>
               </div>
-              <div>
-                <p className="text-sm md:text-[16px] font-medium text-black">
+              <div className="text-center">
+                <p className="text-xl md:text-2xl font-medium text-black">
                   100+
                 </p>
-                <p className="text-[#787878] text-sm">Students Helped</p>
+                <p className="text-[#787878] text-sm md:text-base">
+                  Students Helped
+                </p>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Mission & Vision Section */}
-        <div className="relative w-full h-[300px] md:h-[400px] my-8 md:my-12">
-          <img src={missionImage} alt="Mission" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 flex items-center justify-center px-4">
-            <div className="w-full max-w-2xl">
+        <div className="relative w-full h-[50vh] min-h-[300px] md:h-[60vh] my-8 md:my-16">
+          <img
+            src={missionImage}
+            alt="Mission"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40 flex items-center justify-center px-4">
+            <div className="w-full max-w-4xl">
               <Slider {...settings}>
                 {slides.map((slide, index) => (
-                  <div key={index} className="text-center px-4">
-                    <h2 className="text-2xl md:text-3xl lg:text-[40px] font-semibold text-white mb-2 md:mb-4">
+                  <div key={index} className="px-2 md:px-4 text-center">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-4">
                       {slide.title}
                     </h2>
-                    <p className="text-base md:text-lg lg:text-xl xl:text-2xl text-white">
+                    <p className="text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto">
                       {slide.text}
                     </p>
                   </div>
@@ -171,46 +179,46 @@ const AboutUs = () => {
         </div>
 
         {/* Services Section */}
-        <section className="px-4 md:px-8 lg:px-24 mx-auto">
-          <div className="text-left">
-            <div className="flex items-center pt-4 md:pt-10">
-              <div className="w-12 md:w-20 border-t border-gray-500"></div>
-              <h3 className="text-gray-500 text-sm md:text-[16px] uppercase tracking-wide ml-2 md:ml-3">
-                WHAT SETS US APART
-              </h3>
-            </div>
-            <p className="text-lg md:text-2xl lg:text-3xl mt-4 md:mt-5 text-gray-800">
-              IGL Sri Lanka Offers Complete Support, From University Selection
-              To Visa Approval. Our Experts Ensure A{" "}
-              <span className="text-[#787878]">
-                Smooth, Stress-Free Process, Guiding You Through Admissions,
-                Documentation, And Financial Aid{" "}
-              </span>
-              Every Step Of The Way.
-            </p>
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
+          <div className="flex items-center pt-4">
+            <div className="w-12 md:w-20 border-t border-gray-500" />
+            <h3 className="text-gray-500 text-sm md:text-base uppercase tracking-wide ml-2 md:ml-3">
+              WHAT SETS US APART
+            </h3>
           </div>
+          <p className="text-lg md:text-xl lg:text-2xl mt-4 md:mt-6 text-gray-800">
+            IGL Sri Lanka Offers Complete Support, From University Selection To
+            Visa Approval. Our Experts Ensure A{" "}
+            <span className="text-[#787878]">
+              Smooth, Stress-Free Process, Guiding You Through Admissions,
+              Documentation, And Financial Aid{" "}
+            </span>
+            Every Step Of The Way.
+          </p>
 
-          <div className="mt-6 md:mt-8 flex flex-col md:flex-row items-start gap-6 md:gap-10">
-            <div className="w-full md:w-1/2">
+          <div className="mt-8 flex flex-col lg:flex-row gap-6 md:gap-8">
+            <div className="w-full lg:w-1/2">
               <img
                 src={servise}
                 alt="Counseling Session"
-                className="rounded-xl w-full h-[300px] md:h-[470px] lg:h-[500px] object-cover"
+                className="rounded-xl w-full h-auto aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/3] object-cover"
               />
             </div>
 
-            <div className="w-full md:w-1/2">
+            <div className="w-full lg:w-1/2">
               {faqs.map((faq, index) => (
                 <div key={index} className="border-b border-gray-300">
                   <button
-                    className="flex justify-between items-center w-full py-4 md:py-6 text-base md:text-lg lg:text-xl xl:text-2xl font-medium text-left"
+                    className="flex justify-between items-center w-full py-4 md:py-5 text-left"
                     onClick={() => toggleAccordion(index)}
                   >
-                    {faq.title}
+                    <span className="text-base md:text-lg lg:text-xl font-medium pr-4">
+                      {faq.title}
+                    </span>
                     {openIndex === index ? (
-                      <ChevronUp className="w-4 h-4 md:w-5 md:h-5 text-gray-600" />
+                      <ChevronUp className="w-5 h-5 md:w-6 md:h-6 text-gray-600 shrink-0" />
                     ) : (
-                      <ChevronDown className="w-4 h-4 md:w-5 md:h-5 text-gray-600" />
+                      <ChevronDown className="w-5 h-5 md:w-6 md:h-6 text-gray-600 shrink-0" />
                     )}
                   </button>
                   <motion.div
@@ -223,7 +231,9 @@ const AboutUs = () => {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <p className="text-gray-600 pb-4 px-2">{faq.content}</p>
+                    <p className="text-gray-600 pb-4 px-2 text-sm md:text-base">
+                      {faq.content}
+                    </p>
                   </motion.div>
                 </div>
               ))}
@@ -232,14 +242,14 @@ const AboutUs = () => {
         </section>
 
         {/* Meet Our Team */}
-        <section className="w-full mx-auto px-4 md:px-8 lg:px-20 py-8 md:py-20 text-center">
-          <div className="flex items-center pt-4 md:pt-10">
-            <div className="w-12 md:w-20 border-t border-gray-500"></div>
-            <h3 className="text-gray-500 text-sm md:text-[16px] uppercase tracking-wide ml-2 my-5 md:ml-3">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
+          <div className="flex items-center pt-4">
+            <div className="w-12 md:w-20 border-t border-gray-500" />
+            <h3 className="text-gray-500 text-sm md:text-base uppercase tracking-wide ml-2 md:ml-3">
               MEET OUR TEAM
             </h3>
           </div>
-          <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-800 mb-8 md:mb-12">
+          <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-800 mt-4 mb-8 md:mb-12">
             The Passionate Experts Dedicated To Guiding You On Your Journey
           </h2>
 

@@ -1,9 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const DestinationCard = ({ image, country, flag }) => {
+    const navigate = useNavigate();
+
+    const handleLearnMore = () => {
+        navigate("/individualcountry");
+    };
+
     return (
         <div className="relative group overflow-hidden rounded-xl">
-
             {/* Image Wrapper with Hover Effect */}
             <div className="relative w-full h-[500px] rounded-lg overflow-hidden group cursor-pointer">
                 {/* Image */}
@@ -14,12 +20,12 @@ const DestinationCard = ({ image, country, flag }) => {
                 />
 
                 {/* Button Appears on Hover and Centers it */}
-                <button className="absolute cursor-pointer top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white text-black font-bold text-base px-6 py-3 rounded-3xl">
+                <button 
+                    onClick={handleLearnMore} 
+                    className="absolute cursor-pointer top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white text-black font-bold text-base px-6 py-3 rounded-3xl">
                     Learn More
                 </button>
             </div>
-
-
 
             {/* Title and Flag */}
             <div className="mt-4 flex items-center">
