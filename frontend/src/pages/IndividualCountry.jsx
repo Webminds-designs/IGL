@@ -52,7 +52,7 @@ const IndividualCountry = () => {
         </section>
 
         {/* Why Study Here Section */}
-        <div className="bg-white px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
+        <div className="bg-white px-4 sm:px-6 lg:px-8 py-8 md:py-2">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center mb-4">
               <div className="w-12 md:w-20 border-t border-gray-500"></div>
@@ -76,7 +76,7 @@ const IndividualCountry = () => {
         </div>
 
         {/* Popular Universities Section */}
-        <section className="px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
+        <section className="px-4 sm:px-6 lg:px-8 py-8 md:py-5">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center mb-4">
               <div className="w-12 md:w-20 border-t border-gray-500"></div>

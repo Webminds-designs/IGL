@@ -97,7 +97,7 @@ const AboutUs = () => {
         </div>
 
         {/* Who We Are Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16 lg:py-20">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-5">
           <div className="flex items-center pt-4">
             <div className="w-12 md:w-20 border-t border-gray-500" />
             <h3 className="text-gray-500 text-sm md:text-base uppercase tracking-wide ml-2 md:ml-3">
@@ -179,7 +179,7 @@ const AboutUs = () => {
         </div>
 
         {/* Services Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-2">
           <div className="flex items-center pt-4">
             <div className="w-12 md:w-20 border-t border-gray-500" />
             <h3 className="text-gray-500 text-sm md:text-base uppercase tracking-wide ml-2 md:ml-3">
@@ -242,7 +242,7 @@ const AboutUs = () => {
         </section>
 
         {/* Meet Our Team */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-15">
           <div className="flex items-center pt-4">
             <div className="w-12 md:w-20 border-t border-gray-500" />
             <h3 className="text-gray-500 text-sm md:text-base uppercase tracking-wide ml-2 md:ml-3">
