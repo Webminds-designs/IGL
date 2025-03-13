@@ -28,8 +28,8 @@ const UniversityCard = ({ image, name }) => {
             </div>
 
             {/* University Name */}
-            <div className="mt-4 text-center">
-                <p className="text-2xl font-base">
+            <div className="mt-4 text-center ">
+                <p className="text-2xl md:text-[32px] font-base">
                     {name}
                 </p>
             </div>

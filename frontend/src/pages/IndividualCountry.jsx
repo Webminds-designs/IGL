@@ -23,7 +23,7 @@ const IndividualCountry = () => {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 flex items-end justify-start pb-6 md:pb-12 px-4 md:px-8 lg:px-16 xl:px-24">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[64px] font-medium text-white text-left leading-tight md:leading-normal">
+            <h1 className="text-2xl sm:text-3xl md:text-[64px] lg:text-[64px] xl:text-[64px] font-medium text-white text-left leading-tight md:leading-normal">
               Study in USA – Your Pathway to
               <br className="hidden md:block" />
               Global Education Starts Here
@@ -40,7 +40,7 @@ const IndividualCountry = () => {
                 Featured Universities
               </h3>
             </div>
-            <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-800 mb-8 md:mb-12">
+            <h2 className="text-xl md:text-[36px] lg:text-[36px] text-gray-800 mb-8 md:mb-12">
               Discover Universities Partnered With IGL In USA
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
@@ -56,11 +56,11 @@ const IndividualCountry = () => {
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center mb-4">
               <div className="w-12 md:w-20 border-t border-gray-500"></div>
-              <h3 className="text-gray-500 text-sm md:text-base uppercase tracking-wide ml-2 md:ml-3">
+              <h3 className="text-gray-500 text-[16px] md:text-base uppercase tracking-wide ml-2 md:ml-3">
                 WHY STUDY HERE
               </h3>
             </div>
-            <p className="text-base md:text-lg lg:text-xl text-gray-800 mb-8 md:mb-12 leading-relaxed">
+            <p className="text-base md:text-lg lg:text-[36px] text-gray-800 mb-8 md:mb-12 leading-relaxed">
               The USA Is A Top Destination For Students Worldwide, Offering A{" "}
               <span className="text-[#787878]">
                 World-Class Education System, Globally Recognized Degrees, And
@@ -84,7 +84,7 @@ const IndividualCountry = () => {
                 POPULAR AMONG STUDENTS
               </h3>
             </div>
-            <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-800 mb-8 md:mb-12">
+            <h2 className="text-xl md:text-2xl md:text-[36px] text-gray-800 mb-8 md:mb-12">
               Other Universities You May Like
             </h2>
 
@@ -98,7 +98,7 @@ const IndividualCountry = () => {
             <div className="w-full flex justify-center mt-8 md:mt-12">
               <button
                 className="text-black py-2 px-6 md:py-3 md:px-10 border-2 border-black rounded-3xl 
-                hover:bg-black hover:text-white transition-all duration-300 text-base md:text-lg"
+                hover:bg-black hover:text-white transition-all duration-300 text-base md:text-[16px]"
               >
                 Explore More Universities
               </button>

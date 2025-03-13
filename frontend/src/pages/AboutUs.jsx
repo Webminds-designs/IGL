@@ -88,7 +88,7 @@ const AboutUs = () => {
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 flex items-end justify-start pb-6 md:pb-12 px-4 md:px-8 lg:px-16 xl:px-24 bg-gradient-to-t from-black/60">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[64px] font-medium text-white leading-tight md:leading-normal">
+            <h1 className="text-2xl sm:text-[64px] md:text-[64px] lg:text-5xl xl:text-[64px] font-medium text-white leading-tight md:leading-normal">
               Empowering Futures, Connecting
               <br className="hidden md:block" />
               Students To Global Education
@@ -97,14 +97,14 @@ const AboutUs = () => {
         </div>
 
         {/* Who We Are Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-5">
+        <section className=" mx-auto px-4 sm:px-6 lg:px-20 py-8 md:py-8">
           <div className="flex items-center pt-4">
             <div className="w-12 md:w-20 border-t border-gray-500" />
             <h3 className="text-gray-500 text-sm md:text-base uppercase tracking-wide ml-2 md:ml-3">
               who are we
             </h3>
           </div>
-          <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl mt-4 md:mt-6 text-gray-800">
+          <p className="text-lg md:text-[36px] lg:text-[36px] xl:text-[36px] mt-4 md:mt-6 text-gray-800">
             At Institute of Global Languages (IGL), We Specialize In{" "}
             <span className="text-[#787878]">
               Helping Sri Lankan Students Achieve Their Dream Of Studying
@@ -128,24 +128,24 @@ const AboutUs = () => {
             </p>
             <div className="flex justify-between md:justify-start md:gap-8 lg:gap-12">
               <div className="text-center">
-                <p className="text-xl md:text-2xl font-medium text-black">
+                <p className="text-xl md:text-[36px] font-medium text-black">
                   10+
                 </p>
-                <p className="text-[#787878] text-sm md:text-base">Countries</p>
+                <p className="text-[#787878] text-[16px] md:text-base">Countries</p>
               </div>
               <div className="text-center">
-                <p className="text-xl md:text-2xl font-medium text-black">
+                <p className="text-xl md:text-[36px] font-medium text-black">
                   15+
                 </p>
-                <p className="text-[#787878] text-sm md:text-base">
+                <p className="text-[#787878] text-[16px] md:text-base">
                   Universities
                 </p>
               </div>
               <div className="text-center">
-                <p className="text-xl md:text-2xl font-medium text-black">
+                <p className="text-xl md:text-[36px] font-medium text-black">
                   100+
                 </p>
-                <p className="text-[#787878] text-sm md:text-base">
+                <p className="text-[#787878] text-[16px] md:text-base">
                   Students Helped
                 </p>
               </div>
@@ -165,10 +165,10 @@ const AboutUs = () => {
               <Slider {...settings}>
                 {slides.map((slide, index) => (
                   <div key={index} className="px-2 md:px-4 text-center">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-4">
+                    <h2 className="text-2xl md:text-[40px] lg:text-[40px] font-medium text-white mb-4">
                       {slide.title}
                     </h2>
-                    <p className="text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto">
+                    <p className="text-base md:text-[24px] lg:text-[24px] text-white/90 max-w-2xl mx-auto">
                       {slide.text}
                     </p>
                   </div>
@@ -179,14 +179,14 @@ const AboutUs = () => {
         </div>
 
         {/* Services Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-2">
+        <section className="mx-auto px-4 sm:px-6 lg:px-20 py-8 md:py-2">
           <div className="flex items-center pt-4">
             <div className="w-12 md:w-20 border-t border-gray-500" />
             <h3 className="text-gray-500 text-sm md:text-base uppercase tracking-wide ml-2 md:ml-3">
               WHAT SETS US APART
             </h3>
           </div>
-          <p className="text-lg md:text-xl lg:text-2xl mt-4 md:mt-6 text-gray-800">
+          <p className="text-lg md:text-[36px] lg:text-[36px] xl:text-[36px] mt-4 md:mt-6 text-gray-800">
             IGL Sri Lanka Offers Complete Support, From University Selection To
             Visa Approval. Our Experts Ensure A{" "}
             <span className="text-[#787878]">
@@ -201,7 +201,7 @@ const AboutUs = () => {
               <img
                 src={servise}
                 alt="Counseling Session"
-                className="rounded-xl w-full h-auto aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/3] object-cover"
+                className="rounded-xl w-full h-116 aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/3] object-cover"
               />
             </div>
 
@@ -212,7 +212,7 @@ const AboutUs = () => {
                     className="flex justify-between items-center w-full py-4 md:py-5 text-left"
                     onClick={() => toggleAccordion(index)}
                   >
-                    <span className="text-base md:text-lg lg:text-xl font-medium pr-4">
+                    <span className="text-base md:text-[24px] lg:text-[24px] font-medium pr-4">
                       {faq.title}
                     </span>
                     {openIndex === index ? (
@@ -231,7 +231,7 @@ const AboutUs = () => {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <p className="text-gray-600 pb-4 px-2 text-sm md:text-base">
+                    <p className="text-gray-600 pb-4 px-2 text-[16px] md:text-base">
                       {faq.content}
                     </p>
                   </motion.div>
@@ -242,14 +242,14 @@ const AboutUs = () => {
         </section>
 
         {/* Meet Our Team */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-15">
+        <section className="mx-auto px-4 sm:px-6 lg:px-20 py-8 md:py-15">
           <div className="flex items-center pt-4">
             <div className="w-12 md:w-20 border-t border-gray-500" />
             <h3 className="text-gray-500 text-sm md:text-base uppercase tracking-wide ml-2 md:ml-3">
               MEET OUR TEAM
             </h3>
           </div>
-          <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-800 mt-4 mb-8 md:mb-12">
+          <h2 className="text-xl md:text-[36px] lg:text-[36px] xl:text-[36px] text-gray-800 mt-4 mb-8 md:mb-12">
             The Passionate Experts Dedicated To Guiding You On Your Journey
           </h2>
 
@@ -260,7 +260,7 @@ const AboutUs = () => {
                 alt="Farzan Cader"
                 className="w-48 h-60 md:w-64 md:h-80 mx-auto rounded-lg mb-4 md:mb-6 object-cover"
               />
-              <h3 className="text-lg md:text-xl lg:text-2xl font-semibold">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-medium">
                 Farzan Cader
               </h3>
               <p className="text-gray-600 text-sm md:text-base">
@@ -273,7 +273,7 @@ const AboutUs = () => {
                 alt="Shahiq Cader"
                 className="w-48 h-60 md:w-64 md:h-80 mx-auto rounded-lg mb-4 md:mb-6 object-cover"
               />
-              <h3 className="text-lg md:text-xl lg:text-2xl font-semibold">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-medium">
                 Shahiq Cader
               </h3>
               <p className="text-gray-600 text-sm md:text-base">
