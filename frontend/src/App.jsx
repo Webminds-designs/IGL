@@ -5,6 +5,7 @@ import AboutUs from "./pages/AboutUs";
 import Countries from "./pages/Countries";
 import Universities from "./pages/Universities";
 import ContactUs from "./pages/ContactUs";
+import IndividualCountry from "./pages/IndividualCountry";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/countries" element={<Countries />} />
         <Route path="/universities" element={<Universities />} />
         <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/individualcountry" element={<IndividualCountry />} />
       </Routes>
     </Router>
   );
