@@ -88,7 +88,7 @@ const AboutUs = () => {
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 flex items-end justify-start pb-6 md:pb-12 px-4 md:px-8 lg:px-16 xl:px-24 bg-gradient-to-t from-black/60">
-            <h1 className="text-2xl sm:text-[64px] md:text-[64px] lg:text-5xl xl:text-[64px] font-medium text-white leading-tight md:leading-normal">
+            <h1 className="text-2xl sm:text-lg md:text-2xl lg:text-5xl xl:text-[64px] font-medium text-white leading-tight md:leading-normal">
               Empowering Futures, Connecting
               <br className="hidden md:block" />
               Students To Global Education
@@ -104,7 +104,7 @@ const AboutUs = () => {
               who are we
             </h3>
           </div>
-          <p className="text-lg md:text-[36px] lg:text-[36px] xl:text-[36px] mt-4 md:mt-6 text-gray-800">
+          <p className="text-lg md:text-2xl lg:text-[36px] xl:text-[36px] mt-4 md:mt-6 text-gray-800">
             At Institute of Global Languages (IGL), We Specialize In{" "}
             <span className="text-[#787878]">
               Helping Sri Lankan Students Achieve Their Dream Of Studying
@@ -186,7 +186,7 @@ const AboutUs = () => {
               WHAT SETS US APART
             </h3>
           </div>
-          <p className="text-lg md:text-[36px] lg:text-[36px] xl:text-[36px] mt-4 md:mt-6 text-gray-800">
+          <p className="text-lg md:text-2xl lg:text-[36px] xl:text-[36px] mt-4 md:mt-6 text-gray-800">
             IGL Sri Lanka Offers Complete Support, From University Selection To
             Visa Approval. Our Experts Ensure A{" "}
             <span className="text-[#787878]">
@@ -249,7 +249,7 @@ const AboutUs = () => {
               MEET OUR TEAM
             </h3>
           </div>
-          <h2 className="text-xl md:text-[36px] lg:text-[36px] xl:text-[36px] text-gray-800 mt-4 mb-8 md:mb-12">
+          <h2 className="text-xl md:text-2xl lg:text-[36px] xl:text-[36px] text-gray-800 mt-4 mb-8 md:mb-12">
             The Passionate Experts Dedicated To Guiding You On Your Journey
           </h2>
 

@@ -23,7 +23,7 @@ const IndividualCountry = () => {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 flex items-end justify-start pb-6 md:pb-12 px-4 md:px-8 lg:px-16 xl:px-24">
-            <h1 className="text-2xl sm:text-3xl md:text-[64px] lg:text-[64px] xl:text-[64px] font-medium text-white text-left leading-tight md:leading-normal">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl lg:text-[64px] xl:text-[64px] font-medium text-white text-left leading-tight md:leading-normal">
               Study in USA – Your Pathway to
               <br className="hidden md:block" />
               Global Education Starts Here
@@ -40,7 +40,7 @@ const IndividualCountry = () => {
                 Featured Universities
               </h3>
             </div>
-            <h2 className="text-xl md:text-[36px] lg:text-[36px] text-gray-800 mb-8 md:mb-12">
+            <h2 className="text-xl md:text-2xl lg:text-[36px] text-gray-800 mb-8 md:mb-12">
               Discover Universities Partnered With IGL In USA
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
@@ -84,7 +84,7 @@ const IndividualCountry = () => {
                 POPULAR AMONG STUDENTS
               </h3>
             </div>
-            <h2 className="text-xl md:text-2xl md:text-[36px] text-gray-800 mb-8 md:mb-12">
+            <h2 className="text-xl md:text-2xl lg:text-[36px] text-gray-800 mb-8 md:mb-12">
               Other Universities You May Like
             </h2>
 

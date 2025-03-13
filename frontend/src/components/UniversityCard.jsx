@@ -29,7 +29,7 @@ const UniversityCard = ({ image, name }) => {
 
             {/* University Name */}
             <div className="mt-4 text-center ">
-                <p className="text-2xl md:text-[32px] font-base">
+                <p className="text-2xl lg:text-[32px] font-base">
                     {name}
                 </p>
             </div>
