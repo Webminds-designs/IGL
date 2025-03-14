@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./Navbar";
 
 // Import images
-import heroImage from "../assets/hero.jpg";
-import heroImage2 from "../assets/hero2.jpg";
-import heroImage3 from "../assets/hero3.jpg";
-import heroImage4 from "../assets/hero4.jpg";
-import heroImage5 from "../assets/hero5.jpg";
+import heroImage from "../assets/hero.png";
+import heroImage2 from "../assets/hero2.png";
+import heroImage3 from "../assets/hero3.png";
+import heroImage4 from "../assets/hero4.png";
+import heroImage5 from "../assets/hero5.png";
 
 // Array of images and corresponding text
 const images = [
