@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion } from "framer-motion";
@@ -11,6 +11,7 @@ import personImage2 from "../assets/person2.jpg";
 import missionImage from "../assets/missionn.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import CountUp from "react-countup";
 
 const faqs = [
   {
@@ -45,16 +46,47 @@ const faqs = [
   },
 ];
 
+const slides = [
+  {
+    title: "Our Mission",
+    text: "To be Sri Lanka’s most trusted study abroad consultancy, offering reliable, expert guidance and a seamless process for students seeking higher education globally.",
+  },
+  {
+    title: "Our Vision",
+    text: "To Empower Students With Knowledge, Opportunities, And Confidence To Succeed In A Global Academic And Professional Landscape.",
+  },
+];
+
 const AboutUs = () => {
   const [openIndex, setOpenIndex] = useState(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [counterInView, setCounterInView] = useState(false); // State for counter div visibility
+  const counterRef = useRef(null); // Ref for counter div
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setCounterInView(entry.isIntersecting);
+      },
+      { threshold: 0.5 } // Triggers when 50% of the div is visible
+    );
+
+    if (counterRef.current) {
+      observer.observe(counterRef.current);
+    }
+
+    return () => {
+      if (counterRef.current) {
+        observer.unobserve(counterRef.current);
+      }
+    };
+  }, []);
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -64,17 +96,6 @@ const AboutUs = () => {
     cssEase: "linear",
     arrows: false,
   };
-
-  const slides = [
-    {
-      title: "Our Mission",
-      text: "To be Sri Lanka’s most trusted study abroad consultancy, offering reliable, expert guidance and a seamless process for students seeking higher education globally.",
-    },
-    {
-      title: "Our Vision",
-      text: "To Empower Students With Knowledge, Opportunities, And Confidence To Succeed In A Global Academic And Professional Landscape.",
-    },
-  ];
 
   return (
     <div className="bg-white">
@@ -101,15 +122,16 @@ const AboutUs = () => {
           <div className="flex items-center pt-4">
             <div className="w-12 md:w-20 border-t border-gray-500" />
             <h3 className="text-gray-500 text-sm md:text-base uppercase tracking-wide ml-2 md:ml-3">
-              who are we
+              Who Are We
             </h3>
           </div>
+
           <p className="text-lg md:text-2xl lg:text-[36px] xl:text-[36px] mt-4 md:mt-6 text-gray-800">
             At Institute of Global Languages (IGL), We Specialize In{" "}
             <span className="text-[#787878]">
               Helping Sri Lankan Students Achieve Their Dream Of Studying
-              Abroad.{" "}
-            </span>
+              Abroad.
+            </span>{" "}
             With A Commitment To Excellence, We Provide{" "}
             <span className="text-[#787878]">
               Personalized Guidance, Expert Support, And A Hassle-Free Process{" "}
@@ -117,8 +139,8 @@ const AboutUs = () => {
             To Connect Students With Top International Institutions.
           </p>
 
-          <div className="flex flex-col md:flex-row justify-between gap-6 mt-6 md:mt-10">
-            <p className="text-base md:text-lg text-gray-800 md:max-w-2xl">
+          <div className="flex flex-col justify-between gap-6 md:flex-row mt-6 md:mt-10">
+            <p className="text-base md:text-[16px] text-gray-800 md:max-w-2xl">
               With Years Of Experience In Student Recruitment And International
               Education Consulting, We Are Dedicated To Making Your Academic
               Journey{" "}
@@ -126,16 +148,23 @@ const AboutUs = () => {
                 Smooth, Successful, And Stress-Free.
               </span>
             </p>
-            <div className="flex justify-between md:justify-start md:gap-8 lg:gap-12">
+            <div
+              ref={counterRef}
+              className="flex justify-between md:justify-start md:gap-8 lg:gap-12"
+            >
               <div className="text-center">
                 <p className="text-xl md:text-[36px] font-medium text-black">
-                  10+
+                  {counterInView && <CountUp start={0} end={10} duration={3} />}
+                  +
                 </p>
-                <p className="text-[#787878] text-[16px] md:text-base">Countries</p>
+                <p className="text-[#787878] text-[16px] md:text-base">
+                  Countries
+                </p>
               </div>
               <div className="text-center">
                 <p className="text-xl md:text-[36px] font-medium text-black">
-                  15+
+                  {counterInView && <CountUp start={0} end={15} duration={3} />}
+                  +
                 </p>
                 <p className="text-[#787878] text-[16px] md:text-base">
                   Universities
@@ -143,7 +172,10 @@ const AboutUs = () => {
               </div>
               <div className="text-center">
                 <p className="text-xl md:text-[36px] font-medium text-black">
-                  100+
+                  {counterInView && (
+                    <CountUp start={0} end={100} duration={3} />
+                  )}
+                  +
                 </p>
                 <p className="text-[#787878] text-[16px] md:text-base">
                   Students Helped
