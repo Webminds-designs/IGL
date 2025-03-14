@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import universitiesImage from '../assets/universities.jpg';
+import universitiesImage from '../assets/universities.png';
 import UniversityCard from "../components/UniversityCard";
 
 // Importing University Images
