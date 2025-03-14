@@ -18,7 +18,7 @@ function App() {
         <Route path="/universities" element={<Universities />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/individualcountry" element={<IndividualCountry />} />
-        <Route path="/individualuniversity" element={<IndividualUniversity />} />
+        <Route path="/individualuniversity/:id" element={<IndividualUniversity />} />
       </Routes>
     </Router>
   );
