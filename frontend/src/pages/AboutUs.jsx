@@ -88,7 +88,7 @@ const AboutUs = () => {
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 flex items-end justify-start pb-6 md:pb-12 px-4 md:px-8 lg:px-16 xl:px-24 bg-gradient-to-t from-black/60">
-            <h1 className="text-2xl sm:text-lg md:text-2xl lg:text-5xl xl:text-[64px] font-medium text-white leading-tight md:leading-normal">
+            <h1 className="text-2xl sm:text-3xl md:text-[55px] lg:text-5xl xl:text-[64px] font-medium text-white leading-tight md:leading-normal">
               Empowering Futures, Connecting
               <br className="hidden md:block" />
               Students To Global Education
@@ -97,7 +97,7 @@ const AboutUs = () => {
         </div>
 
         {/* Who We Are Section */}
-        <section className=" mx-auto px-4 sm:px-6 lg:px-20 py-8 md:py-8">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-8 md:py-8">
           <div className="flex items-center pt-4">
             <div className="w-12 md:w-20 border-t border-gray-500" />
             <h3 className="text-gray-500 text-sm md:text-base uppercase tracking-wide ml-2 md:ml-3">
@@ -179,7 +179,7 @@ const AboutUs = () => {
         </div>
 
         {/* Services Section */}
-        <section className="mx-auto px-4 sm:px-6 lg:px-20 py-8 md:py-2">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-8 md:py-2">
           <div className="flex items-center pt-4">
             <div className="w-12 md:w-20 border-t border-gray-500" />
             <h3 className="text-gray-500 text-sm md:text-base uppercase tracking-wide ml-2 md:ml-3">
@@ -242,9 +242,9 @@ const AboutUs = () => {
         </section>
 
         {/* Meet Our Team */}
-        <section className="mx-auto px-4 sm:px-6 lg:px-20 py-8 md:py-15">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-8 md:py-15">
           <div className="flex items-center pt-4">
-            <div className="w-12 md:w-20 border-t border-gray-500" />
+            <div className=" w-12 md:w-20 border-t border-gray-500" />
             <h3 className="text-gray-500 text-sm md:text-base uppercase tracking-wide ml-2 md:ml-3">
               MEET OUR TEAM
             </h3>
