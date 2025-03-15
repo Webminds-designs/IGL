@@ -19,6 +19,7 @@ function App() {
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/individualcountry" element={<IndividualCountry />} />
         <Route path="/individualuniversity/:id" element={<IndividualUniversity />} />
+        <Route path="/individualcountry/:countryCode" element={<IndividualCountry />} />
       </Routes>
     </Router>
   );

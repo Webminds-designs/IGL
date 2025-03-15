@@ -1,7 +1,5 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
-
 import bgImage from '../assets/countries.jpg';
 import DestinationCard from "../components/DestinationCard";
 import usaImage from '../assets/usa.jpg';
@@ -67,36 +65,33 @@ const Countries = () => {
             <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 ">
 
                 {/* United States */}
-                <DestinationCard image={usaImage} country="United States" flag={US} />
+                <DestinationCard image={usaImage} country="United States" flag={US} countryCode="usa" />
                 {/* Canada */}
-                <DestinationCard image={canadaImage} country="Canada" flag={CA} />
+                <DestinationCard image={canadaImage} country="Canada" flag={CA} countryCode="canada" />
                 {/* Germany */}
-                <DestinationCard image={germanyImage} country="Germany" flag={DE} />
+                <DestinationCard image={germanyImage} country="Germany" flag={DE} countryCode="germany" />
                 {/* France */}
-                <DestinationCard image={franceImage} country="France" flag={FR} />
+                <DestinationCard image={franceImage} country="France" flag={FR} countryCode="france" />
                 {/* Switzerland */}
-                <DestinationCard image={switzerlandImage} country="Switzerland" flag={CH} />
+                <DestinationCard image={switzerlandImage} country="Switzerland" flag={CH} countryCode="switzerland" />
                 {/* Singapore */}
-                <DestinationCard image={singaporeImage} country="Singapore" flag={SG} />
+                <DestinationCard image={singaporeImage} country="Singapore" flag={SG} countryCode="singapore" />
                 {/* Malaysia */}
-                <DestinationCard image={malaysiaImage} country="Malaysia" flag={MY} />
+                <DestinationCard image={malaysiaImage} country="Malaysia" flag={MY} countryCode="malaysia" />
                 {/* Netherlands */}
-                <DestinationCard image={netherlandsImage} country="Netherlands" flag={NL} />
+                <DestinationCard image={netherlandsImage} country="Netherlands" flag={NL} countryCode="netherlands" />
                 {/* Poland */}
-                <DestinationCard image={polandImage} country="Poland" flag={PL} />
+                <DestinationCard image={polandImage} country="Poland" flag={PL} countryCode="poland" />
                 {/* UAE */}
-                <DestinationCard image={uaeImage} country="UAE" flag={AE} />
+                <DestinationCard image={uaeImage} country="UAE" flag={AE} countryCode="uae" />
                 {/* India */}
-                <DestinationCard image={indiaImage} country="India" flag={IN} />
+                <DestinationCard image={indiaImage} country="India" flag={IN} countryCode="india" />
                 {/* Belgium */}
-                <DestinationCard image={belgiumImage} country="Belgium" flag={BE} />
+                <DestinationCard image={belgiumImage} country="Belgium" flag={BE} countryCode="belgium" />
             </div>
 
             <Footer />
-
         </div>
-
-
     );
 };
 

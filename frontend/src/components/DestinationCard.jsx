@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const DestinationCard = ({ image, country, flag }) => {
+const DestinationCard = ({ image, country, flag, countryCode }) => {
     const navigate = useNavigate();
 
     const handleLearnMore = () => {
-        navigate("/individualcountry");
+        navigate(`/individualcountry/${countryCode}`);
     };
 
     return (
@@ -20,8 +20,8 @@ const DestinationCard = ({ image, country, flag }) => {
                 />
 
                 {/* Button Appears on Hover and Centers it */}
-                <button 
-                    onClick={handleLearnMore} 
+                <button
+                    onClick={handleLearnMore}
                     className="absolute cursor-pointer top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white text-black font-bold text-base px-6 py-3 rounded-3xl">
                     Learn More
                 </button>
