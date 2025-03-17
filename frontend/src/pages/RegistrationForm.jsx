@@ -8,17 +8,137 @@ const RegistrationForm = () => {
     const [step, setStep] = useState(1);
     const [submitted, setSubmitted] = useState(false);
 
+    // State to store form data
+    const [formData, setFormData] = useState({
+        fullName: "",
+        gender: "",
+        year: "",
+        month: "",
+        date: "",
+        email: "",
+        mobile: "",
+        alternateMobile: "",
+        address: "",
+        qualification: "",
+        specialQualifications: "",
+        fieldOfInterest: "",
+        studyDestination1: "",
+        studyDestination2: "",
+        studyDestination3: "",
+        englishLevel: "",
+        message: "",
+        agree: false,
+    });
+
+    // State to track validation errors
+    const [errors, setErrors] = useState({});
+
+    // Handle input change
+    const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setFormData({
+            ...formData,
+            [name]: type === "checkbox" ? checked : value,
+        });
+    };
+
+    // Validate fields for the current step
+    const validateStep = () => {
+        const newErrors = {};
+
+        if (step === 1) {
+            if (!formData.fullName) newErrors.fullName = "Full Name is required.";
+            if (!formData.gender) newErrors.gender = "Gender is required.";
+            if (!formData.year || !formData.month || !formData.date) newErrors.dob = "Date of Birth is required.";
+            if (!formData.email) newErrors.email = "Email Address is required.";
+            if (!formData.mobile) newErrors.mobile = "Mobile Number is required.";
+            if (!formData.address) newErrors.address = "Address is required.";
+        }
+
+        if (step === 2) {
+            if (!formData.qualification) newErrors.qualification = "Highest Academic Qualification is required.";
+            if (!formData.specialQualifications) newErrors.specialQualifications = "Special Qualifications are required.";
+            if (!formData.fieldOfInterest) newErrors.fieldOfInterest = "Field of Interest is required.";
+            if (!formData.studyDestination1) newErrors.studyDestination1 = "Preferred Study Destination is required.";
+        }
+
+        if (step === 3) {
+            if (!formData.agree) newErrors.agree = "You must agree to the terms.";
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0; // Return true if no errors
+    };
+
+    // Handle next step
     const nextStep = () => {
-        if (step < 3) setStep(step + 1);
+        if (validateStep()) {
+            setStep(step + 1);
+        }
     };
 
+    // Handle previous step
     const prevStep = () => {
-        if (step > 1) setStep(step - 1);
+        setStep(step - 1);
     };
 
+    // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        setSubmitted(true);
+        if (validateStep()) {
+            setSubmitted(true);
+        }
+    };
+
+    // Restrict input to letters only
+    const restrictToLetters = (e) => {
+        const regex = /^[A-Za-z\s]*$/;
+        if (!regex.test(e.key) && e.key !== "Backspace") {
+            e.preventDefault();
+        }
+    };
+
+    // Restrict input to numbers only
+    const restrictToNumbers = (e) => {
+        const regex = /^[0-9]*$/;
+        if (!regex.test(e.key) && e.key !== "Backspace") {
+            e.preventDefault();
+        }
+    };
+
+    // Restrict year to past values
+    const restrictYear = (e) => {
+        const regex = /^[0-9]*$/;
+        if (!regex.test(e.key) && e.key !== "Backspace") {
+            e.preventDefault();
+        }
+        const currentYear = new Date().getFullYear();
+        const inputYear = parseInt(e.target.value + e.key, 10);
+        if (inputYear > currentYear && e.key !== "Backspace") {
+            e.preventDefault();
+        }
+    };
+
+    // Restrict date to 1-31
+    const restrictDate = (e) => {
+        const regex = /^[0-9]*$/;
+        if (!regex.test(e.key) && e.key !== "Backspace") {
+            e.preventDefault();
+        }
+        const inputDate = parseInt(e.target.value + e.key, 10);
+        if ((inputDate < 1 || inputDate > 31) && e.key !== "Backspace") {
+            e.preventDefault();
+        }
+    };
+
+    // Validate email format
+    const validateEmail = (e) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!regex.test(e.target.value)) {
+            setErrors({ ...errors, email: "Invalid email format." });
+        } else {
+            setErrors({ ...errors, email: "" });
+        }
     };
 
     return (
@@ -62,20 +182,48 @@ const RegistrationForm = () => {
                             {step === 1 && (
                                 <div className="space-y-7 text-sm">
                                     <label>Full Name <span className="text-red-500">*</span></label>
-                                    <input type="text" placeholder="Enter your full name" className="w-full border border-gray-300 p-2 rounded-4xl" />
+                                    <input
+                                        type="text"
+                                        name="fullName"
+                                        placeholder="Enter your full name"
+                                        className="w-full border border-gray-300 p-2 rounded-4xl"
+                                        value={formData.fullName}
+                                        onChange={handleChange}
+                                        onKeyDown={restrictToLetters} // Restrict to letters only
+                                    />
+                                    {errors.fullName && <p className="text-red-500 text-xs">{errors.fullName}</p>}
 
                                     <label>Gender <span className="text-red-500">*</span></label>
-                                    <select className="w-full border border-gray-300 p-2 rounded-4xl text-gray-500 cursor-pointer">
-                                        <option value="" disabled selected>Select Gender</option>
+                                    <select
+                                        name="gender"
+                                        className="w-full border border-gray-300 p-2 rounded-4xl text-gray-500 cursor-pointer"
+                                        value={formData.gender}
+                                        onChange={handleChange}
+                                    >
+                                        <option value="" disabled>Select Gender</option>
                                         <option>Male</option>
                                         <option>Female</option>
                                     </select>
+                                    {errors.gender && <p className="text-red-500 text-xs">{errors.gender}</p>}
 
                                     <label>Date of Birth <span className="text-red-500">*</span></label>
                                     <div className="flex space-x-2">
-                                        <input type="text" placeholder="Year" className="w-1/3 border border-gray-300 p-2 rounded-4xl" />
-                                        <select className="w-1/3 border border-gray-300 p-2 rounded-4xl text-gray-500 cursor-pointer">
-                                            <option value="" disabled selected>Month</option>
+                                        <input
+                                            type="text"
+                                            name="year"
+                                            placeholder="Year"
+                                            className="w-1/3 border border-gray-300 p-2 rounded-4xl"
+                                            value={formData.year}
+                                            onChange={handleChange}
+                                            onKeyDown={restrictYear} // Restrict to past years
+                                        />
+                                        <select
+                                            name="month"
+                                            className="w-1/3 border border-gray-300 p-2 rounded-4xl text-gray-500 cursor-pointer"
+                                            value={formData.month}
+                                            onChange={handleChange}
+                                        >
+                                            <option value="" disabled>Month</option>
                                             <option>January</option>
                                             <option>February</option>
                                             <option>March</option>
@@ -89,20 +237,63 @@ const RegistrationForm = () => {
                                             <option>November</option>
                                             <option>December</option>
                                         </select>
-                                        <input type="text" placeholder="Date" className="w-1/3 border border-gray-300 p-2 rounded-4xl" />
+                                        <input
+                                            type="text"
+                                            name="date"
+                                            placeholder="Date"
+                                            className="w-1/3 border border-gray-300 p-2 rounded-4xl"
+                                            value={formData.date}
+                                            onChange={handleChange}
+                                            onKeyDown={restrictDate} // Restrict to 1-31
+                                        />
                                     </div>
+                                    {errors.dob && <p className="text-red-500 text-xs">{errors.dob}</p>}
 
                                     <label>Email Address <span className="text-red-500">*</span></label>
-                                    <input type="email" placeholder="Enter your email address" className="w-full border border-gray-300 p-2 rounded-4xl" />
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="Enter your email address"
+                                        className="w-full border border-gray-300 p-2 rounded-4xl"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        onBlur={validateEmail} // Validate email format on blur
+                                    />
+                                    {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
 
                                     <label>Mobile Number <span className="text-red-500">*</span></label>
-                                    <input type="text" placeholder="Enter your mobile number" className="w-full border border-gray-300 p-2 rounded-4xl" />
+                                    <input
+                                        type="text"
+                                        name="mobile"
+                                        placeholder="Enter your mobile number"
+                                        className="w-full border border-gray-300 p-2 rounded-4xl"
+                                        value={formData.mobile}
+                                        onChange={handleChange}
+                                        onKeyDown={restrictToNumbers} // Restrict to numbers only
+                                    />
+                                    {errors.mobile && <p className="text-red-500 text-xs">{errors.mobile}</p>}
 
                                     <label>Alternate Mobile Number</label>
-                                    <input type="text" placeholder="Enter your alternate mobile number" className="w-full border border-gray-300 p-2 rounded-4xl" />
+                                    <input
+                                        type="text"
+                                        name="alternateMobile"
+                                        placeholder="Enter your alternate mobile number"
+                                        className="w-full border border-gray-300 p-2 rounded-4xl"
+                                        value={formData.alternateMobile}
+                                        onChange={handleChange}
+                                        onKeyDown={restrictToNumbers} // Restrict to numbers only
+                                    />
 
                                     <label>Address <span className="text-red-500">*</span></label>
-                                    <input type="text" placeholder="Enter your address" className="w-full border border-gray-300 p-2 rounded-4xl" />
+                                    <input
+                                        type="text"
+                                        name="address"
+                                        placeholder="Enter your address"
+                                        className="w-full border border-gray-300 p-2 rounded-4xl"
+                                        value={formData.address}
+                                        onChange={handleChange}
+                                    />
+                                    {errors.address && <p className="text-red-500 text-xs">{errors.address}</p>}
                                 </div>
                             )}
 
@@ -110,31 +301,83 @@ const RegistrationForm = () => {
                             {step === 2 && (
                                 <div className="space-y-7 text-sm">
                                     <label>Highest Academic Qualification <span className="text-red-500">*</span></label>
-                                    <select className="w-full border border-gray-300 p-2 cursor-pointer rounded-4xl text-gray-500">
-                                        <option value="" disabled selected>Select Qualification</option>
+                                    <select
+                                        name="qualification"
+                                        className="w-full border border-gray-300 p-2 cursor-pointer rounded-4xl text-gray-500"
+                                        value={formData.qualification}
+                                        onChange={handleChange}
+                                    >
+                                        <option value="" disabled>Select Qualification</option>
                                         <option>O-Level</option>
                                         <option>A-Level</option>
                                         <option>Diploma</option>
                                         <option>Bachelor's</option>
                                         <option>Master’s</option>
                                     </select>
+                                    {errors.qualification && <p className="text-red-500 text-xs">{errors.qualification}</p>}
 
                                     <label>Other Special Qualifications <span className="text-red-500">*</span></label>
-                                    <textarea placeholder="Enter your special qualifications" className="w-full border border-gray-300 p-2 rounded-4xl"></textarea>
+                                    <textarea
+                                        name="specialQualifications"
+                                        placeholder="Enter your special qualifications"
+                                        className="w-full border border-gray-300 p-2 rounded-4xl"
+                                        value={formData.specialQualifications}
+                                        onChange={handleChange}
+                                    />
+                                    {errors.specialQualifications && <p className="text-red-500 text-xs">{errors.specialQualifications}</p>}
 
                                     <label>Fields of Interest for Study <span className="text-red-500">*</span></label>
-                                    <input type="text" placeholder="Enter your field of interest" className="w-full border border-gray-300 p-2 rounded-4xl" />
+                                    <input
+                                        type="text"
+                                        name="fieldOfInterest"
+                                        placeholder="Enter your field of interest"
+                                        className="w-full border border-gray-300 p-2 rounded-4xl"
+                                        value={formData.fieldOfInterest}
+                                        onChange={handleChange}
+                                        onKeyDown={restrictToLetters} // Restrict to letters only
+                                    />
+                                    {errors.fieldOfInterest && <p className="text-red-500 text-xs">{errors.fieldOfInterest}</p>}
 
                                     <label>Preferred Study Destinations <span className="text-red-500">*</span></label>
                                     <div className="space-y-2">
-                                        <input type="text" placeholder="Option 1" className="w-full border border-gray-300 p-2 rounded-4xl" />
-                                        <input type="text" placeholder="Option 2" className="w-full border border-gray-300 p-2 rounded-4xl" />
-                                        <input type="text" placeholder="Option 3" className="w-full border border-gray-300 p-2 rounded-4xl" />
+                                        <input
+                                            type="text"
+                                            name="studyDestination1"
+                                            placeholder="Option 1"
+                                            className="w-full border border-gray-300 p-2 rounded-4xl"
+                                            value={formData.studyDestination1}
+                                            onChange={handleChange}
+                                            onKeyDown={restrictToLetters} // Restrict to letters only
+                                        />
+                                        {errors.studyDestination1 && <p className="text-red-500 text-xs">{errors.studyDestination1}</p>}
+                                        <input
+                                            type="text"
+                                            name="studyDestination2"
+                                            placeholder="Option 2"
+                                            className="w-full border border-gray-300 p-2 rounded-4xl"
+                                            value={formData.studyDestination2}
+                                            onChange={handleChange}
+                                            onKeyDown={restrictToLetters} // Restrict to letters only
+                                        />
+                                        <input
+                                            type="text"
+                                            name="studyDestination3"
+                                            placeholder="Option 3"
+                                            className="w-full border border-gray-300 p-2 rounded-4xl"
+                                            value={formData.studyDestination3}
+                                            onChange={handleChange}
+                                            onKeyDown={restrictToLetters} // Restrict to letters only
+                                        />
                                     </div>
 
                                     <label>English Competency Level</label>
-                                    <select className="w-full border border-gray-300 p-2 rounded-4xl text-gray-500 cursor-pointer">
-                                        <option value="" disabled selected>Select Level</option>
+                                    <select
+                                        name="englishLevel"
+                                        className="w-full border border-gray-300 p-2 rounded-4xl text-gray-500 cursor-pointer"
+                                        value={formData.englishLevel}
+                                        onChange={handleChange}
+                                    >
+                                        <option value="" disabled>Select Level</option>
                                         <option>Beginner</option>
                                         <option>Intermediate</option>
                                         <option>Advanced</option>
@@ -147,11 +390,25 @@ const RegistrationForm = () => {
                             {step === 3 && (
                                 <div className="space-y-7 text-sm">
                                     <label>Message to IGL (If Any)</label>
-                                    <textarea placeholder="Enter your message" className="w-full border border-gray-300 p-2 rounded-4xl"></textarea>
+                                    <textarea
+                                        name="message"
+                                        placeholder="Enter your message"
+                                        className="w-full border border-gray-300 p-2 rounded-4xl"
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                    />
+
                                     <div className="flex items-center space-x-2 cursor-pointer">
-                                        <input type="checkbox" className="w-4 h-4 cursor-pointer" />
+                                        <input
+                                            type="checkbox"
+                                            name="agree"
+                                            className="w-4 h-4 cursor-pointer"
+                                            checked={formData.agree}
+                                            onChange={handleChange}
+                                        />
                                         <label>I Agree To Be Contacted By IGL Regarding My Study Abroad Application.</label>
                                     </div>
+                                    {errors.agree && <p className="text-red-500 text-xs">{errors.agree}</p>}
                                 </div>
                             )}
 
