@@ -7,6 +7,8 @@ import Universities from "./pages/Universities";
 import ContactUs from "./pages/ContactUs";
 import IndividualCountry from "./pages/IndividualCountry";
 import IndividualUniversity from "./pages/IndividualUniversity";
+import RegistrationForm from "./pages/RegistrationForm";
+
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
         <Route path="/universities" element={<Universities />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/individualcountry" element={<IndividualCountry />} />
-        <Route path="/individualuniversity" element={<IndividualUniversity />} />
+        <Route path="/individualuniversity/:id" element={<IndividualUniversity />} />
+        <Route path="/individualcountry/:countryCode" element={<IndividualCountry />} />
+        <Route path="/Register" element={<RegistrationForm />} />
       </Routes>
     </Router>
   );

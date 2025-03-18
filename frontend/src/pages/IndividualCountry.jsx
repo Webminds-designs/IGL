@@ -1,16 +1,18 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import goldengate from "../assets/GoldenGate.png";
-import woxenUni from "../assets/WoxenUni.png";
-import NEOMA from "../assets/NEOMA.png";
-import AmsterCam from "../assets/AmsterCam.png";
-import MiamiUni from "../assets/MiamiUni.png";
-import DavisUni from "../assets/DavisUni.png";
-import EduGCol from "../assets/EduGCol.png";
 import UniversityCard from "../components/UniversityCard";
+import countries from "../Data/countries"; // Adjust the path as necessary
 
 const IndividualCountry = () => {
+  const { countryCode } = useParams();
+  const country = countries[countryCode];
+
+  if (!country) {
+    return <div>Country not found</div>;
+  }
+
   return (
     <div className="bg-white">
       <Navbar />
@@ -18,15 +20,13 @@ const IndividualCountry = () => {
         {/* Hero Section */}
         <div className="relative w-full h-[50vh] min-h-[300px] md:h-[60vh] lg:h-[70vh]">
           <img
-            src={goldengate}
+            src={country.heroImage}
             alt="Hero"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 flex items-end justify-start pb-6 md:pb-12 px-4 md:px-8 lg:px-16 xl:px-24">
             <h1 className="text-2xl sm:text-3xl md:text-2xl lg:text-[64px] xl:text-[64px] font-medium text-white text-left leading-tight md:leading-normal">
-              Study in USA – Your Pathway to
-              <br className="hidden md:block" />
-              Global Education Starts Here
+              {country.heroText}
             </h1>
           </div>
         </div>
@@ -41,12 +41,12 @@ const IndividualCountry = () => {
               </h3>
             </div>
             <h2 className="text-xl md:text-2xl lg:text-[36px] text-gray-800 mb-8 md:mb-12">
-              Discover Universities Partnered With IGL In USA
+              Discover Universities Partnered With IGL In {country.name}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-              <UniversityCard image={MiamiUni} name="Miami Regional University" />
-              <UniversityCard image={DavisUni} name="Davis University" />
-              <UniversityCard image={EduGCol} name="EduGlobal College" />
+              {country.featuredUniversities.map((university, index) => (
+                <UniversityCard key={index} image={university.image} name={university.name} />
+              ))}
             </div>
           </div>
         </section>
@@ -61,16 +61,7 @@ const IndividualCountry = () => {
               </h3>
             </div>
             <p className="text-base md:text-lg lg:text-[36px] text-gray-800 mb-8 md:mb-12 leading-relaxed">
-              The USA Is A Top Destination For Students Worldwide, Offering A{" "}
-              <span className="text-[#787878]">
-                World-Class Education System, Globally Recognized Degrees, And
-                Diverse Career Opportunities. With Cutting-Edge Research, Strong
-                Industry Connections{" "}
-              </span>
-              And A Focus On Innovation, U.S. Universities Provide Students With
-              Real-World Experience. A Multicultural Environment And Flexible
-              Academic Programs Make Studying In The USA Not Just An Education,
-              But A Transformative Journey.
+              {country.whyStudyHere}
             </p>
           </div>
         </div>
@@ -89,16 +80,16 @@ const IndividualCountry = () => {
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-              <UniversityCard image={woxenUni} name="Woxsen University" />
-              <UniversityCard image={NEOMA} name="NEOMA Business School" />
-              <UniversityCard image={AmsterCam} name="Amsterdam Campus" />
+              {country.popularUniversities.map((university, index) => (
+                <UniversityCard key={index} image={university.image} name={university.name} />
+              ))}
             </div>
 
             {/* Centered Explore More Button */}
             <div className="w-full flex justify-center mt-8 md:mt-12">
               <button
                 className="text-black py-2 px-6 md:py-3 md:px-10 border-2 border-black rounded-3xl 
-                hover:bg-black hover:text-white transition-all duration-300 text-base md:text-[16px]"
+                                hover:bg-black hover:text-white transition-all duration-300 text-base md:text-[16px]"
               >
                 Explore More Universities
               </button>

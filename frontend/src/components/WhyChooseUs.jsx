@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import chooseImage from "../assets/choose.jpg";
 
-
 const faqs = [
     {
         title: "Personalized Counseling",
@@ -45,37 +44,34 @@ const WhyChooseUs = () => {
     };
 
     return (
-        <section className="max-w-7xl mx-auto px-6 py-20">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
             <div className="text-center">
-                <div className="flex items-center pt-10">
+                <div className="flex items-center text-left pt-10">
                     <div className="w-20 border-t border-gray-500"></div>
-                    <h3 className="text-gray-500 text-xl uppercase tracking-wide ml-3">
+                    <h3 className="text-gray-500 text-lg sm:text-xl uppercase tracking-wide ml-3">
                         Why Choose Us
                     </h3>
                 </div>
-                <h2 className="text-4xl text-gray-800 font-base mt-5 text-left">
+                <h2 className="text-2xl sm:text-4xl text-gray-800 font-base mt-5 text-center sm:text-left">
                     Making Your Education Journey Smooth And Successful
                 </h2>
             </div>
 
-            <div className="mt-8 flex flex-col md:flex-row items-start gap-10">
-                {/* Left Image Section */}
-
-                <div className="w-full md:w-1/2">
+            <div className="mt-8 flex flex-col lg:flex-row gap-6 md:gap-8">
+                <div className="w-full lg:w-1/2">
                     <img
                         src={chooseImage}
                         alt="Counseling Session"
-                        className="rounded-xl w-full h-[630px] object-cover"
+                        className="rounded-xl w-full h-116 aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/3] object-cover"
                     />
                 </div>
-
 
                 {/* Right FAQ Section */}
                 <div className="w-full md:w-1/2">
                     {faqs.map((faq, index) => (
                         <div key={index} className="border-b border-gray-300">
                             <button
-                                className="flex justify-between items-center w-full py-9 text-2xl font-medium text-left"
+                                className="flex justify-between items-center w-full py-4 sm:py-6 text-lg sm:text-2xl font-medium text-left"
                                 onClick={() => toggleAccordion(index)}
                             >
                                 {faq.title}
@@ -97,7 +93,7 @@ const WhyChooseUs = () => {
                                 transition={{ duration: 0.3, ease: "easeInOut" }}
                                 className="overflow-hidden"
                             >
-                                <p className="text-gray-600 pb-4 px-2">{faq.content}</p>
+                                <p className="text-gray-600 pb-4 px-2 text-base sm:text-lg">{faq.content}</p>
                             </motion.div>
                         </div>
                     ))}
