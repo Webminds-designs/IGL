@@ -142,11 +142,12 @@ const RegistrationForm = () => {
     };
 
     return (
-        <div className="bg-white min-h-screen">
+        <div style={{ backgroundColor: 'rgb(255, 255, 255)' }} className="min-h-screen">
+
             <Navbar />
 
             {/* Header Section */}
-            <div className="text-center mt-8 md:mt-16 lg:mt-20 py-6 md:py-10 px-4">
+            <div className="text-center mt-12 md:mt-24 lg:mt-28 py-8 md:py-12 px-4">
                 <h3 className="text-gray-500 text-sm md:text-lg uppercase tracking-wide">
                     STUDENT ASSESSMENT & REGISTRATION FORM
                 </h3>
