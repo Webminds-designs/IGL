@@ -11,7 +11,7 @@ const DestinationCard = ({ image, country, flag, countryCode }) => {
     return (
         <div className="relative group overflow-hidden rounded-xl">
             {/* Image Wrapper with Hover Effect */}
-            <div className="relative w-full h-[500px] rounded-lg overflow-hidden group cursor-pointer">
+            <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer">
                 {/* Image */}
                 <img
                     src={image}
