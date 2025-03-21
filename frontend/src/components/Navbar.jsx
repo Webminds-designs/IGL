@@ -1,22 +1,38 @@
 import React, { useState } from 'react';
-import { NavLink, useNavigate } from "react-router-dom"; // Import useNavigate
-import PropTypes from 'prop-types'; // Import PropTypes
+import { NavLink, useNavigate, useLocation } from "react-router-dom"; // Add useLocation
+import PropTypes from 'prop-types';
 
 const Navbar = ({ fontColor, bgColor }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const navigate = useNavigate(); // Initialize navigate
+    const navigate = useNavigate();
+    const location = useLocation(); // Get current location
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
-    // Determine text color based on background color
+    // Updated getTextColor function to consider the current route
     const getTextColor = () => {
-        if (fontColor) return fontColor; // Use fontColor if explicitly provided
-        return bgColor === "bg-white" ? "text-black" : "text-white"; // Default to black text for white bg, otherwise white
+        if (fontColor) return fontColor;
+
+        // Add routes that should have black text
+        const darkTextRoutes = ['/register', '/contactus'];
+        const shouldUseDarkText = darkTextRoutes.includes(location.pathname.toLowerCase());
+
+        if (bgColor === "bg-white" || shouldUseDarkText) {
+            return "text-black";
+        }
+        return "text-white";
     };
 
     const textColor = getTextColor();
+
+    // Helper function for button border color
+    const getButtonStyle = () => {
+        return textColor === "text-black"
+            ? "border-black text-black"
+            : "border-white text-white";
+    };
 
     return (
         <nav
@@ -84,17 +100,18 @@ const Navbar = ({ fontColor, bgColor }) => {
                     </ul>
                 </div>
 
-                {/* Register button */}
+                {/* Update Register button */}
                 <div className="hidden lg:block">
                     <button
-                        className={`px-4 py-2 rounded-full border ${textColor === "text-black" ? "border-black text-black" : "border-white text-white"} cursor-pointer bg-opacity-90 backdrop-blur-2xl`}
+                        className={`px-4 py-2 rounded-full border ${getButtonStyle()} cursor-pointer bg-opacity-90 backdrop-blur-2xl hover:bg-opacity-20`}
                         onClick={() => navigate("/Register")}
                     >
                         Register With Us
                     </button>
                 </div>
 
-                {/* Hamburger Menu Icon */}
+
+                {/* Update Hamburger Menu Icon */}
                 <div className="sm:block md:block lg:hidden cursor-pointer" onClick={toggleMenu}>
                     <svg
                         className="w-6 h-6"
@@ -115,8 +132,9 @@ const Navbar = ({ fontColor, bgColor }) => {
                 {/* Mobile Dropdown Menu */}
                 <div
                     className={`absolute top-full left-0 w-full bg-opacity-90 backdrop-blur-lg p-6 transition-transform 
-                        ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:hidden ${bgColor || "bg-transparent"}`}
+                    ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:hidden ${bgColor || "bg-transparent"}`}
                 >
+
                     <ul className="flex flex-col space-y-4">
                         {["Home", "About Us", "Countries", "Universities", "Contact Us"].map((item) => (
                             <li key={item}>
@@ -133,7 +151,7 @@ const Navbar = ({ fontColor, bgColor }) => {
                         ))}
 
                         <button
-                            className={`px-4 py-2 rounded-full border ${textColor === "text-black" ? "border-black text-black" : "border-white text-white"} cursor-pointer bg-opacity-90 backdrop-blur-2xl w-full text-center mt-4`}
+                            className={`px-4 py-2 rounded-full border ${getButtonStyle()} cursor-pointer bg-opacity-90 backdrop-blur-2xl w-full text-center mt-4`}
                             onClick={() => {
                                 navigate("/Register");
                                 setIsOpen(false);
