@@ -59,9 +59,8 @@ const Universities = () => {
             <section className="relative w-full h-[100vh] bg-cover bg-center"
                 style={{ backgroundImage: `url(${universitiesImage})` }}>
                 <div className="absolute inset-0 bg-opacity-90"></div>
-                <div className="absolute bottom-0 left-0 z-10 flex flex-col text-white text-left px-10 pb-10">
-                    <h1 className="text-3xl md:text-5xl font-base mb-5 leading-snug md:leading-relaxed">
-                        Discover World-Class <br /> Institutions For Your Future
+                <div className="absolute bottom-0 left-0 z-10 text-white text-left px-6 md:px-10 pb-4 md:pb-10 lg:pb-12 xl:pb-14">
+                    <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-base mb-1 md:mb-2 leading-tight md:leading-snug lg:leading-relaxed">  Discover World-Class <br /> Institutions For Your Future
                     </h1>
                 </div>
             </section>

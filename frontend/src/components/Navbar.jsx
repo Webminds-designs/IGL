@@ -1,25 +1,52 @@
 import React, { useState } from 'react';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom"; // Add useLocation
+import PropTypes from 'prop-types';
 
-const Navbar = () => {
+const Navbar = ({ fontColor, bgColor }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation(); // Get current location
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
+    // Updated getTextColor function to consider the current route
+    const getTextColor = () => {
+        if (fontColor) return fontColor;
+
+        // Add routes that should have black text
+        const darkTextRoutes = ['/register', '/contactus'];
+        const shouldUseDarkText = darkTextRoutes.includes(location.pathname.toLowerCase());
+
+        if (bgColor === "bg-white" || shouldUseDarkText) {
+            return "text-black";
+        }
+        return "text-white";
+    };
+
+    const textColor = getTextColor();
+
+    // Helper function for button border color
+    const getButtonStyle = () => {
+        return textColor === "text-black"
+            ? "border-black text-black"
+            : "border-white text-white";
+    };
+
     return (
-        <nav className="absolute z-50 top-0 left-0 w-full p-6 md:p-12 bg-transparent text-white">
+        <nav
+            className={`absolute z-50 top-0 left-0 w-full p-6 md:p-12 ${bgColor || "bg-transparent"} ${textColor}`}
+        >
             <div className="flex justify-between items-center w-full">
                 {/* Logo - clickable */}
-                <div className="text-white text-2xl font-bold cursor-pointer">
+                <div className={`text-2xl font-bold cursor-pointer ${textColor}`}>
                     IGLLOGO
                 </div>
 
-
-                {/* Navigation links - hidden on mobile and tablet (md) views */}
+                {/* Navigation links */}
                 <div className="hidden lg:flex justify-center items-center flex-grow">
-                    <ul className="flex space-x-12 text-white cursor-pointer">
+                    <ul className="flex space-x-12 cursor-pointer">
                         <li>
                             <NavLink
                                 to="/"
@@ -73,24 +100,23 @@ const Navbar = () => {
                     </ul>
                 </div>
 
-
-
-
-
-                {/* Register button - hidden for tablet and mobile views */}
+                {/* Update Register button */}
                 <div className="hidden lg:block">
-                    <button className="px-4 py-2 rounded-full border border-white text-white cursor-pointer bg-opacity-90 backdrop-blur-2xl">
+                    <button
+                        className={`px-4 py-2 rounded-full border ${getButtonStyle()} cursor-pointer bg-opacity-90 backdrop-blur-2xl hover:bg-opacity-20`}
+                        onClick={() => navigate("/Register")}
+                    >
                         Register With Us
                     </button>
                 </div>
 
 
-                {/* Hamburger Menu Icon for mobile and tablet */}
+                {/* Update Hamburger Menu Icon */}
                 <div className="sm:block md:block lg:hidden cursor-pointer" onClick={toggleMenu}>
                     <svg
                         className="w-6 h-6"
                         fill="none"
-                        stroke="currentColor"
+                        stroke={textColor === "text-black" ? "black" : "white"}
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
                     >
@@ -103,34 +129,49 @@ const Navbar = () => {
                     </svg>
                 </div>
 
-
-                {/* Mobile Dropdown Menu (Visible when hamburger is clicked) */}
+                {/* Mobile Dropdown Menu */}
                 <div
-                    className={`absolute top-full left-0 w-full bg-opacity-90 backdrop-blur-lg p-6 transition-transform ${isOpen ? "translate-x-0" : "-translate-x-full"
-                        } lg:hidden`}  // Sh
+                    className={`absolute top-full left-0 w-full bg-opacity-90 backdrop-blur-lg p-6 transition-transform 
+                    ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:hidden ${bgColor || "bg-transparent"}`}
                 >
-                    <ul className="flex flex-col space-y-4 text-white">
+
+                    <ul className="flex flex-col space-y-4">
                         {["Home", "About Us", "Countries", "Universities", "Contact Us"].map((item) => (
                             <li key={item}>
-                                <a href="#" className="hover:underline" onClick={() => setIsOpen(false)}>
+                                <NavLink
+                                    to={item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "")}`}
+                                    className={({ isActive }) =>
+                                        `hover:underline ${isActive ? "underline font-semibold" : ""}`
+                                    }
+                                    onClick={() => setIsOpen(false)}
+                                >
                                     {item}
-                                </a>
+                                </NavLink>
                             </li>
                         ))}
 
                         <button
-                            className="px-4 py-2 rounded-full border border-white text-white cursor-pointer 
-                    bg-opacity-90 backdrop-blur-2xl w-full text-center mt-4"
-                            onClick={() => setIsOpen(false)}
+                            className={`px-4 py-2 rounded-full border ${getButtonStyle()} cursor-pointer bg-opacity-90 backdrop-blur-2xl w-full text-center mt-4`}
+                            onClick={() => {
+                                navigate("/Register");
+                                setIsOpen(false);
+                            }}
                         >
                             Register With Us
                         </button>
                     </ul>
                 </div>
-
             </div>
         </nav>
     );
 };
 
+
+
 export default Navbar;
+
+// Prop Types
+Navbar.propTypes = {
+    fontColor: PropTypes.string,
+    bgColor: PropTypes.string,
+};
