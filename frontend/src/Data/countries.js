@@ -8,10 +8,9 @@ const countries = {
             { image: "/assets/DavisUni.png", name: "Davis University" },
             { image: "/assets/EduGCol.png", name: "EduGlobal College" },
         ],
-        whyStudyHere: `The USA offers a world-class education system, globally recognized 
-        degrees, and diverse career opportunities. With cutting-edge research, strong 
-        industry connections, and a focus on innovation, studying in the USA provides 
-        real-world experience and a transformative journey.`,
+        whyStudyHere: `The USA is a land of diversity, opportunity, and world-renowned education. It offers an enriching environment for international students.
+With its world-class universities, the USA fosters creativity, critical thinking, and innovation, preparing students for global career success.
+At IGL, we support your journey to success in the USA. Embrace the experience and explore new possibilities!`,
         popularUniversities: [
             { image: "/assets/WoxenUni.png", name: "Woxsen University" },
             { image: "/assets/NEOMA.png", name: "NEOMA Business School" },
@@ -30,10 +29,11 @@ const countries = {
             { image: "/assets/UBC.png", name: "University of British Columbia" },
         ],
 
-        whyStudyHere: `Canada is known for its high-quality education, diverse culture, 
-        and student-friendly environment. With affordable tuition fees, strong research 
-        programs, and post-graduate work opportunities, Canada is a top choice for students 
-        seeking academic excellence and career growth.`,
+        whyStudyHere: `Canada offers a unique blend of natural beauty, multicultural cities, and a high quality of life. With a welcoming and inclusive society, international students can enjoy a balanced lifestyle while exploring diverse cultural experiences.
+
+Renowned for its world-class education system, Canada fosters innovation, hands-on learning, and academic excellence. Its universities and colleges provide a wide range of programs, strong research opportunities, and a focus on student well-being, ensuring graduates are well-prepared for their careers.
+
+At IGL, we support your journey to success in Canada. Embrace this opportunity, and make the most of your academic experience. Best wishes for your future!`,
 
         popularUniversities: [
             { image: "/assets/Waterloo.png", name: "University of Waterloo" },
@@ -53,10 +53,11 @@ const countries = {
             { image: "/assets/TechnicalMunich.png", name: "Technical University of Munich" },
         ],
 
-        whyStudyHere: `Germany is a hub for innovation, research, and technology. 
-        Offering free or low-cost education at prestigious universities, Germany attracts 
-        students from all over the world. The strong industrial ties and a robust job 
-        market make it an excellent destination for higher studies.`,
+        whyStudyHere: `Germany seamlessly blends rich history with modern innovation, offering picturesque landscapes, iconic castles, and dynamic cities like Berlin and Munich. With its efficient infrastructure, diverse culture, and renowned festivals, international students can immerse themselves in a truly enriching experience.
+
+As a global leader in education, Germany is home to prestigious institutions specializing in engineering, technology, and sciences. Its strong emphasis on research, industry collaboration, and affordability—often with low or no tuition fees—makes it an ideal study destination. Many programs are available in English, ensuring accessibility for international students.
+
+At IGL, we support your journey to academic and personal success in Germany. Embrace this opportunity, and make the most of what this remarkable country has to offer. Best wishes for your future!`,
 
         popularUniversities: [
             { image: "/assets/Freiburg.png", name: "University of Freiburg" },
@@ -76,10 +77,11 @@ const countries = {
             { image: "/assets/INSEAD.png", name: "INSEAD Business School" },
         ],
 
-        whyStudyHere: `France is one of the leading study destinations, known for its 
-        prestigious institutions, world-class business schools, and strong emphasis on 
-        arts and humanities. With affordable tuition fees and scholarship opportunities, 
-        it is a top choice for international students.`,
+        whyStudyHere: `France is a country of timeless charm, rich culture, and global influence in art, fashion, and cuisine. From the iconic Eiffel Tower to the vineyards of Bordeaux and the French Riviera’s stunning coastlines, it offers a unique and inspiring experience for international students.
+
+Renowned for academic excellence, France’s prestigious institutions uphold rigorous standards while emphasizing practical learning. With diverse programs in business, arts, sciences, and engineering—many offered in English—students gain access to world-class education. A strong focus on research and innovation further enhances learning opportunities.
+
+At IGL, we are proud to support your journey in France. Embrace this opportunity, immerse yourself in its culture, and make the most of your academic experience. Best wishes for your success!`,
 
         popularUniversities: [
             { image: "/assets/ESSEC.png", name: "ESSEC Business School" },
@@ -97,9 +99,11 @@ const countries = {
             { image: "/assets/UniversityGeneva.png", name: "University of Geneva" },
             { image: "/assets/EPFL.png", name: "École Polytechnique Fédérale de Lausanne (EPFL)" },
         ],
-        whyStudyHere: `Switzerland is known for its high academic standards, top-ranked universities, 
-        and strong research programs. It offers an international environment, innovation-driven 
-        education, and numerous career opportunities in finance, pharmaceuticals, and hospitality.`,
+        whyStudyHere: `Switzerland is renowned for its breathtaking landscapes, high quality of life, and vibrant cities like Zurich and Geneva. With a strong tradition of hospitality, innovation, and cultural diversity, it offers international students a peaceful and inspiring environment to thrive.
+
+Home to some of the world’s top universities, Switzerland excels in hospitality, business, engineering, and science. Its education system emphasizes practical learning, cutting-edge research, and industry connections, providing students with valuable hands-on experience and career opportunities. A multicultural setting further enriches the learning experience.
+
+At IGL, we support your journey in Switzerland. Embrace the opportunity, explore its excellence, and make the most of your academic adventure. Best wishes for your success!`,
         popularUniversities: [
             { image: "/assets/UniversityZurich.png", name: "University of Zurich" },
             { image: "/assets/Lucerne.png", name: "Lucerne University of Applied Sciences" },
@@ -116,9 +120,11 @@ const countries = {
             { image: "/assets/NTU.png", name: "Nanyang Technological University (NTU)" },
             { image: "/assets/SIM.png", name: "Singapore Institute of Management (SIM)" },
         ],
-        whyStudyHere: `Singapore is a leading education hub, offering world-class universities, 
-        cutting-edge research, and strong industry connections. Its strategic location, safe 
-        environment, and diverse culture make it a preferred study destination.`,
+        whyStudyHere: `Singapore is a vibrant city-state that seamlessly blends cultural heritage with modern innovation. Known for its iconic skyline, lush greenery, and diverse communities, it offers a safe and welcoming environment for international students. With a dynamic food scene, cultural festivals, and world-class infrastructure, Singapore provides an enriching and inspiring experience.
+
+As a global education hub, Singapore is home to top-ranked universities recognized for excellence in teaching, research, and innovation. Offering diverse programs in engineering, business, IT, and sciences, its education system fosters critical thinking, creativity, and real-world application. Positioned as a business and technology hub, Singapore provides outstanding career and networking opportunities.
+
+At IGL, we support your academic journey in Singapore. Embrace this opportunity, explore new horizons, and let Singapore shape your future. Best wishes for your success!`,
         popularUniversities: [
             { image: "/assets/SUTD.png", name: "Singapore University of Technology and Design (SUTD)" },
             { image: "/assets/JamesCook.png", name: "James Cook University Singapore" },
@@ -154,9 +160,11 @@ const countries = {
             { image: "/assets/TUe.png", name: "Eindhoven University of Technology" },
             { image: "/assets/Leiden.png", name: "Leiden University" },
         ],
-        whyStudyHere: `The Netherlands offers high-quality education, innovative research opportunities, 
-        and a welcoming international environment. Many programs are taught in English, making it 
-        an attractive destination for students worldwide.`,
+        whyStudyHere: `Malaysia offers a perfect blend of natural beauty and vibrant city life, from the rainforests of Borneo to the dynamic streets of Kuala Lumpur. With a rich multicultural heritage, students can experience diverse traditions, festivals, and cuisine in a welcoming and affordable environment.
+
+As an emerging hub for quality education, Malaysia provides a wide range of academic programs in engineering, business, arts, and hospitality. With globally recognized universities, including international branch campuses, students receive world-class education at a competitive cost. English is widely spoken, ensuring accessibility for international learners.
+
+At IGL, we support your academic journey in Malaysia. Embrace the culture, seize new opportunities, and let Malaysia be the foundation for your success. Best wishes for your future!`,
         popularUniversities: [
             { image: "/assets/Delft.png", name: "Delft University of Technology" },
             { image: "/assets/Utrecht.png", name: "Utrecht University" },

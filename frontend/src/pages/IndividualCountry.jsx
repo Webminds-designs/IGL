@@ -60,7 +60,7 @@ const IndividualCountry = () => {
                 WHY STUDY HERE
               </h3>
             </div>
-            <p className="text-base md:text-lg lg:text-[36px] text-gray-800 mb-8 md:mb-12 leading-relaxed">
+            <p className="text-base md:text-lg lg:text-[32px] text-gray-800 mb-8 md:mb-12 leading-relaxed">
               {country.whyStudyHere}
             </p>
           </div>

@@ -83,10 +83,28 @@ const RegistrationForm = () => {
     };
 
     // Handle form submission
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (validateStep()) {
-            setSubmitted(true);
+            try {
+                const response = await fetch('http://localhost:5000/api/registration/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    setSubmitted(true);
+                } else {
+                    setErrors({ submit: data.message });
+                }
+            } catch (error) {
+                setErrors({ submit: 'Failed to submit form. Please try again.' });
+            }
         }
     };
 
