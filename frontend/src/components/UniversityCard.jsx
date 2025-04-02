@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 
 const UniversityCard = ({ image, name, id }) => {
+
+    console.log(image, id, name)
     const navigate = useNavigate();
 
     const handleLearnMore = () => {

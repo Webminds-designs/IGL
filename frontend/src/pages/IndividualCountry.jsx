@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import UniversityCard from "../components/UniversityCard";
-import countries from "../Data/countries"; // Adjust the path as necessary
+import countries from "../Data/countries";
 
 const IndividualCountry = () => {
   const { countryCode } = useParams();
@@ -81,7 +81,12 @@ const IndividualCountry = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
               {country.popularUniversities.map((university, index) => (
-                <UniversityCard key={index} image={university.image} name={university.name} />
+                <UniversityCard 
+                key={index} 
+                image={university.image} 
+                name={university.name} 
+                id={university.id}  
+              />
               ))}
             </div>
 

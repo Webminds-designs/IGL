@@ -29,6 +29,22 @@ import IN from "../assets/indiaFlag.png";
 import BE from "../assets/belgiumFlag.png";
 
 const Countries = () => {
+
+    const destinations = [
+        { image: usaImage, country: "United States", flag: US, countryCode: "usa" },
+        { image: canadaImage, country: "Canada", flag: CA, countryCode: "canada" },
+        { image: germanyImage, country: "Germany", flag: DE, countryCode: "germany" },
+        { image: franceImage, country: "France", flag: FR, countryCode: "france" },
+        { image: switzerlandImage, country: "Switzerland", flag: CH, countryCode: "switzerland" },
+        { image: singaporeImage, country: "Singapore", flag: SG, countryCode: "singapore" },
+        { image: malaysiaImage, country: "Malaysia", flag: MY, countryCode: "malaysia" },
+        { image: netherlandsImage, country: "Netherlands", flag: NL, countryCode: "netherlands" },
+        { image: polandImage, country: "Poland", flag: PL, countryCode: "poland" },
+        { image: uaeImage, country: "UAE", flag: AE, countryCode: "uae" },
+        { image: indiaImage, country: "India", flag: IN, countryCode: "india" },
+        { image: belgiumImage, country: "Belgium", flag: BE, countryCode: "belgium" }
+    ];
+
     return (
         <div className="bg-white min-h-screen">
             <Navbar />
@@ -61,33 +77,16 @@ const Countries = () => {
                 </p>
             </div>
 
-            {/* Destination Grid */}
-            <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 ">
-
-                {/* United States */}
-                <DestinationCard image={usaImage} country="United States" flag={US} countryCode="usa" />
-                {/* Canada */}
-                <DestinationCard image={canadaImage} country="Canada" flag={CA} countryCode="canada" />
-                {/* Germany */}
-                <DestinationCard image={germanyImage} country="Germany" flag={DE} countryCode="germany" />
-                {/* France */}
-                <DestinationCard image={franceImage} country="France" flag={FR} countryCode="france" />
-                {/* Switzerland */}
-                <DestinationCard image={switzerlandImage} country="Switzerland" flag={CH} countryCode="switzerland" />
-                {/* Singapore */}
-                <DestinationCard image={singaporeImage} country="Singapore" flag={SG} countryCode="singapore" />
-                {/* Malaysia */}
-                <DestinationCard image={malaysiaImage} country="Malaysia" flag={MY} countryCode="malaysia" />
-                {/* Netherlands */}
-                <DestinationCard image={netherlandsImage} country="Netherlands" flag={NL} countryCode="netherlands" />
-                {/* Poland */}
-                <DestinationCard image={polandImage} country="Poland" flag={PL} countryCode="poland" />
-                {/* UAE */}
-                <DestinationCard image={uaeImage} country="UAE" flag={AE} countryCode="uae" />
-                {/* India */}
-                <DestinationCard image={indiaImage} country="India" flag={IN} countryCode="india" />
-                {/* Belgium */}
-                <DestinationCard image={belgiumImage} country="Belgium" flag={BE} countryCode="belgium" />
+            <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
+                {destinations.map((destination, index) => (
+                    <DestinationCard
+                        key={index}
+                        image={destination.image}
+                        country={destination.country}
+                        flag={destination.flag}
+                        countryCode={destination.countryCode}
+                    />
+                ))}
             </div>
 
             <Footer />

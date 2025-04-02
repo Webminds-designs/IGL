@@ -95,7 +95,7 @@ const Universities = () => {
                             key={index}
                             image={university.image}
                             name={university.name}
-                            id={university.id} // Pass the university ID
+                            id={university.id} 
                         />
                     ))}
                 </div>

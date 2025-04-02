@@ -5,7 +5,7 @@ const countries = {
         heroText: "Study in USA – Your Pathway to Global Education Starts Here",
         featuredUniversities: [
             { image: "/assets/MiamiUni.png", name: "Miami Regional University" },
-            { image: "/assets/DavisUni.png", name: "Davis University" },
+            { image: "/assets/davis.jpg", name: "Davis University" },
             { image: "/assets/EduGCol.png", name: "EduGlobal College" },
         ],
         whyStudyHere: `The USA offers a world-class education system, globally recognized 
