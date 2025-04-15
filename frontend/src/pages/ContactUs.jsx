@@ -117,16 +117,25 @@ const ContactForm = () => {
                             <div className="mt-7 space-y-4">
                                 <p className="flex items-center space-x-4 sm:space-x-6">
                                     <MdEmail className="text-xl sm:text-2xl" />
-                                    <span>email@gmail.com</span>
+                                    <span>info@iglsrilanka.com</span>
                                 </p>
                                 <p className="flex items-center space-x-4 sm:space-x-6">
                                     <MdPhone className="text-xl sm:text-2xl" />
-                                    <span>+427755666</span>
+                                    <span>+94 112279786</span>
+                                    <span>+94 775850480</span>
                                 </p>
-                                <p className="flex items-center space-x-4 sm:space-x-6">
-                                    <MdLocationOn className="text-xl sm:text-2xl" />
-                                    <span>Location</span>
+                                <p className="flex items-start space-x-4 sm:space-x-6">
+                                    <MdLocationOn className="text-xl sm:text-2xl mt-1" />
+                                    <span>
+                                        No. 232/3/1, 3rd Floor,<br />
+                                        "Laksiri Building",<br />
+                                        High Level Road,<br />
+                                        Wattegedara,<br />
+                                        Maharagama, Sri Lanka
+
+                                    </span>
                                 </p>
+
                             </div>
 
                             {/* Social Icons */}
