@@ -18,11 +18,11 @@ const IndividualCountry = () => {
       <Navbar />
       <div className="overflow-x-hidden">
         {/* Hero Section */}
-        <div className="relative w-full h-[50vh] min-h-[300px] md:h-[60vh] lg:h-[70vh]">
+        <div className="relative w-full h-[50vh] min-h-[300px] md:h-[60vh] lg:h-[100vh] bg-black">
           <img
-            src={country.heroImage}
+            src={country.image}
             alt="Hero"
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover opacity-70"
           />
           <div className="absolute inset-0 flex items-end justify-start pb-6 md:pb-12 px-4 md:px-8 lg:px-16 xl:px-24">
             <h1 className="text-2xl sm:text-3xl md:text-2xl lg:text-[64px] xl:text-[64px] font-medium text-white text-left leading-tight md:leading-normal">

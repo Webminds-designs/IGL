@@ -21,14 +21,24 @@ import bhmImage from '../assets/bhm.jpg';
 import laXeniaImage from '../assets/la-xenia.jpg';
 import ibaImage from '../assets/iba.jpg';
 
-import heroImage from '../assets/herousa.jpg';
-
+import heroImage1 from '../assets/herousa.jpg';
+import heroImage2 from '../assets/herocanda.jpg';
+import heroImage3 from '../assets/herogermany.jpg';
+import heroImage4 from '../assets/herofrance.jpg';
+import heroImage5 from '../assets/heroswiss.jpg';
+import heroImage6 from '../assets/herosingapore.jpg';
+import heroImage7 from '../assets/heromala.jpg';
+import heroImage8 from '../assets/heronetherland.jpg';
+import heroImage9 from '../assets/heropoland.jpg';
+import heroImage10 from '../assets/herouae.jpg';
+import heroImage11 from '../assets/heroindia.jpg';
+import heroImage12 from '../assets/herobelgium.jpg';
 
 
 const countries = {
     usa: {
         name: "United States",
-        image: heroImage,
+        image: heroImage1,
         heroText: "Study in USA – Your Pathway to Global Education Starts Here",
         featuredUniversities: [
             { image: davisImage, name: "Davis University", id: "davis-university" },
@@ -49,7 +59,7 @@ const countries = {
 
     canada: {
         name: "Canada",
-        heroImage: "/assets/herocanada.jpg",
+        image: heroImage2,
         heroText: "Study in Canada – A Land of Opportunities and Excellence",
 
         featuredUniversities: [
@@ -73,7 +83,7 @@ const countries = {
 
     germany: {
         name: "Germany",
-        heroImage: "/assets/herogermany.jpg",
+        image: heroImage3,
         heroText: "Study in Germany – Innovate, Research, and Excel",
 
         featuredUniversities: [
@@ -97,7 +107,7 @@ const countries = {
 
     france: {
         name: "France",
-        heroImage: "/assets/herofrance.jpg",
+        image: heroImage4,
         heroText: "Study in France – A Gateway to Excellence",
 
         featuredUniversities: [
@@ -120,7 +130,7 @@ const countries = {
 
     switzerland: {
         name: "Switzerland",
-        heroImage: "/assets/heroswiss.jpg",
+        image: heroImage5,
         heroText: "Study in Switzerland – Excellence in Education and Innovation",
         featuredUniversities: [
             { image: bhmImage, name: "Business and Hotel Management School", id: "business-and-hotel-management-school" },
@@ -140,7 +150,7 @@ const countries = {
 
     singapore: {
         name: "Singapore",
-        heroImage: "/assets/herosingapore.jpg",
+        image: heroImage6,
         heroText: "Study in Singapore – A Global Hub for Education and Innovation",
         featuredUniversities: [
             { image: australasiaImage, name: "Academic of Australasia College", id: "australasia-college" },
@@ -157,7 +167,7 @@ const countries = {
 
     malaysia: {
         name: "Malaysia",
-        heroImage: "/assets/heromala.jpg",
+        image: heroImage7,
         heroText: "Study in Malaysia – Affordable and Quality Education",
         featuredUniversities: [
             { image: spectrumImage, name: "Spectrum University College", id: "spectrum-university-college" },
@@ -174,7 +184,7 @@ const countries = {
 
     netherlands: {
         name: "Netherlands",
-        heroImage: "/assets/heronetherland.jpg",
+        image: heroImage8,
         heroText: "Study in Netherlands – A Global Hub for Higher Education",
         featuredUniversities: [
             { image: wittenborgImage, name: "Wittenborg University", id: "wittenborg-university" },
@@ -193,7 +203,7 @@ const countries = {
 
     poland: {
         name: "Poland",
-        heroImage: "/assets/heropoland.jpg",
+        image: heroImage9,
         heroText: "Study in Poland – Affordable and High-Quality Education",
         featuredUniversities: [
             { image: johnPaulImage, name: "John Paul Secondary University", id: "john-paul-secondary-university" },
@@ -209,7 +219,7 @@ const countries = {
 
     uae: {
         name: "United Arab Emirates",
-        heroImage: "/assets/herouae.jpg",
+        image: heroImage10,
         heroText: "Study in UAE – A Hub for Business and Innovation",
         featuredUniversities: [
             { image: manipalImage, name: "Manipal University", id: "manipal-university" },
@@ -226,7 +236,7 @@ const countries = {
 
     india: {
         name: "India",
-        heroImage: "/assets/heroindia.jpg",
+        image: heroImage11,
         heroText: "Study in India – Excellence in Education and Innovation",
         featuredUniversities: [
             { image: waxsenImage, name: "Woxsen University", id: "waxsen-university" },
@@ -243,7 +253,7 @@ const countries = {
 
     belgium: {
         name: "Belgium",
-        heroImage: "/assets/herobelgium.jpg",
+        image: heroImage12,
         heroText: "Study in Belgium – A European Hub for Quality Education",
         featuredUniversities: [
             { image: brusselImage, name: "University of Brussel", id: "university-of-brussel" },
