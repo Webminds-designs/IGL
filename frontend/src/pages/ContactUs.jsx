@@ -26,8 +26,8 @@ const ContactForm = () => {
         setStatus("Sending...");
 
         emailjs.send(
-            "service_v1w4jz8",  // Replace with your Email.js service ID
-            "template_weur74l", // Replace with your Email.js template ID
+            "service_0pdb6z7",  // Replace with your Email.js service ID
+            "template_eiy7wt9", // Replace with your Email.js template ID
             {
                 from_name: formData.name,
                 from_email: formData.email,
